@@ -1,10 +1,9 @@
 "use client";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 function Carrito() {
   const [productosCarrito, setProductosCarrito] = useState([]);
-  const [total, setTotal] = useState(0);
   //traer los datos del local storage
   useEffect(() => {
     const productosCarrito = JSON.parse(
