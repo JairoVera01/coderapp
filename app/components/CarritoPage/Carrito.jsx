@@ -5,12 +5,17 @@ import Image from "next/image";
 function Carrito() {
   const [carritoLocal, setCarritoLocal] = useState([]);
   //traer los datos del local storage
-  useEffect(() => {
-    const productosCarrito = JSON.parse(
-      localStorage.getItem("productosCarrito")
-    );
-    setCarritoLocal(productosCarrito);
-  }, []);
+  useEffect(
+    () => {
+      const productosCarrito = JSON.parse(
+        localStorage.getItem("productosCarrito")
+      );
+      setCarritoLocal(productosCarrito);
+    },
+    [
+      //si el arreglo esta vacio se ejecuta una sola vez
+    ]
+  );
 
   return (
     <div className="container mx-auto mt-10">
