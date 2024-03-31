@@ -3,30 +3,6 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 function Carrito() {
-  // traer los datos del local storage y mostrarlos estan en la clave "productosCarrito" y trae todo esto: cantidad
-  // :
-  // 4
-  // descripcion
-  // :
-  // "Amazon Echo is a hands-free speaker you control with your voice. Echo connects to the Alexa Voice Service to play music, provide information, news, sports scores, weather, and more—instantly."
-  // id
-  // :
-  // 1
-  // imagen
-  // :
-  // "/images/echodot.jpg"
-  // nombre
-  // :
-  // "Amazon Echo"
-  // precio
-  // :
-  // 99.99
-  // sku
-  // :
-  // "B01DFKC2SO"
-  // stock
-  // :
-  // 10
   const [productosCarrito, setProductosCarrito] = useState([]);
   const [total, setTotal] = useState(0);
   //traer los datos del local storage
@@ -36,14 +12,6 @@ function Carrito() {
     );
     setProductosCarrito(productosCarrito);
   }, []);
-
-  const calcularTotal = () => {
-    let total = 0;
-    productosCarrito.forEach((producto) => {
-      total += producto.precio * producto.cantidad;
-    });
-    return total;
-  };
 
   return (
     <div className="container mx-auto mt-10">
