@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 function Carrito() {
-  const [productosCarrito, setProductosCarrito] = useState([]);
+  const [carritoLocal, setCarritoLocal] = useState([]);
   //traer los datos del local storage
   useEffect(() => {
     const productosCarrito = JSON.parse(
       localStorage.getItem("productosCarrito")
     );
-    setProductosCarrito(productosCarrito);
+    setCarritoLocal(productosCarrito);
   }, []);
 
   return (
@@ -37,8 +37,7 @@ function Carrito() {
             </h3>
           </div>
 
-          {/* Map each product row here */}
-          {productosCarrito.map((producto, index) => (
+          {carritoLocal.map((producto, index) => (
             <div
               key={index}
               className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5"
